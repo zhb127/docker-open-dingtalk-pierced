@@ -5,12 +5,12 @@ set -x
 NGROK_LOG=${NGROK_LOG:-"stdout"}
 
 if [ -z "$NGROK_SUBDOMAIN" ]; then
-  echo "Please set NGROK_SUBDOMAIN."
+  echo "Please set NGROK_SUBDOMAIN"
   exit 1
 fi
 
 if [ -z "$NGROK_PORT" ]; then
-  echo "Please set NGROK_PORT."
+  echo "Please set NGROK_PORT, example: 127.0.0.1:80"
   exit 1
 fi
 
