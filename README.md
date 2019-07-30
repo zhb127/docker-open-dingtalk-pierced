@@ -7,6 +7,8 @@
 ### 使用 docker 启动服务
 
 ```bash
+docker pull zhb127/open-dingtalk-pierced
+
 docker run -d -e NGROK_SUBDOMAIN=zhb127-local-test -e NGROK_PORT=127.0.0.1:8081 zhb127/open-dingtalk-pierced
 ```
 
