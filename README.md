@@ -1,4 +1,4 @@
-对[钉钉内网穿透工具](https://open-doc.dingtalk.com/microapp/debug/ucof2g)的 docker 镜像封装，以便能快速的使用 docker 在不同环境进行部署。
+对[钉钉内网穿透工具](https://open-doc.dingtalk.com/microapp/kn6zg7/hb7000)的 docker 镜像封装，以便能快速的使用 docker 在不同环境进行部署。
 
 > 目前已将 docker 镜像上传到 `dockerhub zhb127/open-dingtalk-pierced`。
 
