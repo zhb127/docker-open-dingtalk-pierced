@@ -9,7 +9,8 @@
 ```bash
 docker pull zhb127/open-dingtalk-pierced
 
-docker run -d -e NGROK_SUBDOMAIN=zhb127-local-test -e NGROK_PORT=127.0.0.1:8081 zhb127/open-dingtalk-pierced
+# 启动后，访问 `http://zhb127-test.vaiwan.com/xxxxx` 都会映射到 `http://127.0.0.1:8081/xxxxx`。
+docker run -d -e NGROK_SUBDOMAIN=zhb127-test -e NGROK_PORT=127.0.0.1:8081 zhb127/open-dingtalk-pierced
 ```
 
 查看容器：
