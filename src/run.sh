@@ -10,7 +10,7 @@ if [ -z "$NGROK_SUBDOMAIN" ]; then
 fi
 
 if [ -z "$NGROK_PORT" ]; then
-  echo "Please set NGROK_PORT, example: 127.0.0.1:80"
+  echo "Please set NGROK_PORT, example: 0.0.0.0:80"
   exit 1
 fi
 
