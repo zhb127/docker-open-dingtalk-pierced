@@ -1,17 +1,27 @@
-对[钉钉内网穿透工具](https://open-doc.dingtalk.com/microapp/kn6zg7/hb7000)的 docker 镜像封装，以便能快速的使用 docker 在不同环境进行部署。
+对[钉钉内网穿透工具](https://open-doc.dingtalk.com/microapp/kn6zg7/hb7000)的容器镜像封装，以便能够使用 docker 在不同环境进行快速部署。
 
-> 目前已将 docker 镜像上传到 `dockerhub zhb127/open-dingtalk-pierced`。
+> 目前已将镜像上传至：[docker-hub](https://hub.docker.com/r/zhb127/open-dingtalk-pierced)。
 
 ## 使用说明
 
-### 使用 docker 启动服务
+### 参数说明
+
+| 参数 | 说明 |
+| :-- | :-- |
+| NGROK_SUBDOMAIN | 子域名，该子域名将会附加到 `vaiwan.com` 主域名前面。例如：使用 `zhb127-test` 作为子域名，那么，在工具启动后，请求 `zhb127-test.vaiwan.com` 即访问到被代理服务。|
+| NGROK_PORT | 被代理服务的端口（HTTP 服务），例如：`8080`、`127.0.0.1:8081` 等。 |
+
+> 注意！你所设置的 `NGROK_SUBDOMAIN` 有可能会出现被占用的情况（因为用的人越多，被占用的子域名就会越多），尽可能使用特殊一点的子域名（例如：`公司名+业务吗+环境`等格式）。
+
+### 启动服务
 
 ```bash
 docker pull zhb127/open-dingtalk-pierced
 
-# 启动后，访问 `http://zhb127-test.vaiwan.com/xxxxx` 都会映射到 `http://127.0.0.1:8080/xxxxx`。
 docker run -d -e NGROK_SUBDOMAIN=zhb127-test -e NGROK_PORT=127.0.0.1:8080 zhb127/open-dingtalk-pierced
 ```
+
+> 启动成功后，访问 `http://zhb127-test.vaiwan.com/xxxxx` 都会被映射到内网或者本地服务 `http://127.0.0.1:8080/xxxxx`。
 
 查看容器：
 
