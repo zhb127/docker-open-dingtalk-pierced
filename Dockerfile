@@ -1,8 +1,11 @@
 FROM ubuntu:18.04
 
-COPY ./src/* /
+RUN mkdir /app
+WORKDIR /app
+
+COPY ./src/* ./
+COPY ./docker-entrypoint.sh ./
 
 EXPOSE 4040
 
-CMD ["/run.sh"]
-
+CMD [ "./docker-entrypoint.sh" ]
