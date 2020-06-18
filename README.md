@@ -16,7 +16,9 @@
 ### 使用 docker-compose 启动
 
 ```bash
-cp docker-compose.yaml.example docker-compose.yaml
+cp docker-compose.yml.example docker-compose.yml
+
+# vim docker-compose.yml
 
 docker-compose up -d
 ```
