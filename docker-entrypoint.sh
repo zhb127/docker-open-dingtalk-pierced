@@ -15,4 +15,6 @@ if [ -z "$PORT" ]; then
   exit 1
 fi
 
-./ngrok -config=./ngrok.cfg -log=$LOG -subdomain=$SUBDOMAIN $PORT
+# 这里使用 sh -c 运行 ./ngrok
+# 直接运行 ./ngrok 时，该进程无法接收 SIGINT 信号（即：ctrl+c 中断进程）
+sh -c "./ngrok -config=./ngrok.cfg -log=$LOG -subdomain=$SUBDOMAIN $PORT"
