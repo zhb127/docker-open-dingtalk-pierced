@@ -37,3 +37,5 @@ CONTAINER ID        IMAGE                          COMMAND             CREATED  
 ```bash
 docker logs -f `docker ps -q -f 'name=open-dingtalk-pierced'`
 ```
+
+访问 `http://localhost:4040`，进入界面管理。
