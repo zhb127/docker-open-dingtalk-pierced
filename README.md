@@ -1,5 +1,7 @@
 将[钉钉内网穿透工具](https://open-doc.dingtalk.com/microapp/kn6zg7/hb7000)封装成容器镜像，以便能够在不同的环境下使用 docker-compose 快速部署。
 
+> 已自动更新容器镜像到 [docker hub](https://hub.docker.com/r/zhb127/open-dingtalk-pierced)。
+
 ## 使用说明
 
 ### 参数说明
