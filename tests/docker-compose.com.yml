@@ -1,0 +1,28 @@
+version: '3'
+services:
+  docker-host:
+    # https://github.com/qoomon/docker-host
+    # 此容器，主要用于兼容不同系统（macos、linux）获取宿主机 IP。
+    image: qoomon/docker-host
+    container_name: docker-host-for-open-dingtalk-pierced
+    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+    restart: on-failure
+  open-dingtalk-pierced:
+    build: 
+      context: .
+    image: zhb127/open-dingtalk-pierced
+    container_name: open-dingtalk-pierced
+    restart: always
+    depends_on:
+      - docker-host
+    environment:
+      TLD: "com"
+      SUBDOMAIN: "zhb127-test"
+      PORT: docker-host:80
+    ports:
+      - "4040:4040"
+  echo-server:
+    image: jmalloc/echo-server
+    container_name: echo-server-for-open-dingtalk-pierced
+    ports:
+      - "80:8080"

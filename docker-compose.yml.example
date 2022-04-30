@@ -2,9 +2,9 @@ version: '3'
 services:
   docker-host:
     # https://github.com/qoomon/docker-host
-    # docker-host 容器，主要用来兼容不同系统（macos、linux）获取宿主机 IP。
+    # 此容器，主要用于兼容不同系统（macos、linux）获取宿主机 IP。
     image: qoomon/docker-host
-    container_name: docker-host
+    container_name: docker-host-for-open-dingtalk-pierced
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
     restart: on-failure
   open-dingtalk-pierced:
@@ -16,6 +16,7 @@ services:
     depends_on:
       - docker-host
     environment:
+      TLD: "{顶级域名：com,cn，默认值：com，cn 是现在新版本使用}"
       SUBDOMAIN: "{按需填写子域名}"
       PORT: docker-host:{按需填写被穿透的服务端口（服务必须运行在容器宿主机上，不支持设置为：0.0.0.0:80 这种格式）}
     ports:
