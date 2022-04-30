@@ -8,8 +8,6 @@ services:
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
     restart: on-failure
   open-dingtalk-pierced:
-    build: 
-      context: .
     image: zhb127/open-dingtalk-pierced
     container_name: open-dingtalk-pierced
     restart: always
