@@ -19,7 +19,10 @@
 ### 启动测试
 
 ```bash
-docker-compose --file ./tests/docker-compose.com.yml up --remove-orphans
+docker-compose --file ./tests/docker-compose.com.yml up
+
+// 删除测试容器
+// docker-compose --file ./tests/docker-compose.com.yml down --remove-orphans
 ```
 
 访问 `http://localhost:4040`，进入界面管理。
