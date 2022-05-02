@@ -6,7 +6,7 @@ TLD=${TLD-${NGROK_TLD-"com"}}
 SUBDOMAIN=${SUBDOMAIN-${NGROK_SUBDOMAIN-""}}
 PORT=${PORT-${NGROK_PORT-""}}
 
-if [ "$TLD" -ne "com" && "$TLD" -ne "cn" ]; then
+if [ "$TLD" != "com" ] && [ "$TLD" != "cn" ]; then
   echo "Please set env.TLD=com or env.TLD=cn, default: env.TLD=com" > /dev/stderr
   exit 1
 fi
